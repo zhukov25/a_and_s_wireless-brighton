@@ -53,6 +53,8 @@
 
   .wrap { max-width: 1280px; margin: 0 auto; padding: 0 32px; }
 
+  img, svg { max-width: 100%; height: auto; }
+
   /* ========== TOP BAR ========== */
   .topbar {
     background: var(--ink);
@@ -63,6 +65,7 @@
   }
   .topbar-inner {
     display: flex; justify-content: space-between; align-items: center;
+    gap: 16px;
     padding: 10px 32px;
     max-width: 1280px; margin: 0 auto;
   }
@@ -897,6 +900,100 @@
   .delay-2 { animation-delay: 0.2s; }
   .delay-3 { animation-delay: 0.3s; }
   .delay-4 { animation-delay: 0.4s; }
+
+  /* ========== MOBILE OPTIMIZATIONS ========== */
+  @media (max-width: 768px) {
+    body { font-size: 16px; }
+
+    .wrap { padding: 0 20px; }
+    .topbar-inner { padding: 10px 20px; font-size: 11px; flex-wrap: wrap; gap: 6px 12px; }
+    .topbar .live { font-size: 11px; }
+
+    .nav-inner { padding: 14px 20px; }
+    .logo { font-size: 17px; gap: 8px; }
+    .logo-mark { width: 32px; height: 32px; font-size: 20px; }
+    .nav-cta { padding: 10px 14px; font-size: 13px; }
+
+    .section { padding: 60px 0; }
+    .section-head { margin-bottom: 40px; }
+
+    .hero { padding: 48px 0 60px; }
+    .hero-grid { gap: 48px; }
+    .hero-sub { font-size: 16px; margin-bottom: 28px; }
+    .hero-ctas { gap: 12px; margin-bottom: 32px; }
+    .btn { padding: 14px 22px; font-size: 15px; min-height: 48px; }
+    .hero-ctas .btn { flex: 1 1 auto; justify-content: center; }
+    .hero-trust { gap: 24px; padding-top: 20px; }
+    .trust-num { font-size: 30px; }
+    .trust-label { font-size: 12px; }
+
+    .hero-visual { height: 380px; }
+    .phone-card { width: 180px; height: 360px; right: 10px; top: 10px; }
+    .phone-screen { padding: 22px 16px; }
+    .phone-time { margin-top: 26px; margin-bottom: 18px; font-size: 12px; }
+    .phone-status { padding: 12px; }
+    .ticket-1 { width: 170px; left: 0; top: 60px; padding: 12px 14px; }
+    .ticket-2 { width: 180px; left: 20px; bottom: 40px; padding: 12px 14px; }
+
+    .carriers { padding: 40px 0; }
+    .carriers-row { gap: 18px 24px; }
+    .carrier { font-size: 17px; }
+
+    .service-card { padding: 28px 22px; }
+    .service-card h3 { font-size: 19px; }
+    .service-card p { font-size: 14px; }
+
+    .why-grid { gap: 40px; }
+    .why-item { padding: 22px 0; gap: 16px; }
+    .why-num { font-size: 38px; }
+    .why-item h3 { font-size: 19px; }
+    .why-visual { aspect-ratio: auto; padding: 32px 28px; border-radius: 24px; }
+    .why-quote-mark { font-size: 80px; }
+
+    .pricing-table { border-radius: 18px; }
+    .pricing-row { padding: 18px 20px; gap: 12px; }
+    .pricing-service { font-size: 16px; }
+    .pricing-price { font-size: 20px; }
+
+    .testimonial { padding: 26px 22px; }
+    .testimonial-text { font-size: 19px; }
+
+    .visit-grid { gap: 32px; }
+    .visit-info { margin-top: 28px; }
+    .info-block { padding: 20px 0; }
+    .info-value { font-size: 18px; }
+    .map-card { padding: 24px 22px; border-radius: 20px; }
+
+    .final-cta { padding: 72px 0; }
+    .final-cta p { font-size: 17px; margin-bottom: 32px; }
+    .final-cta .btn-primary { font-size: 17px; padding: 18px 30px; }
+
+    footer { padding: 48px 0 32px; }
+    .footer-grid { margin-bottom: 32px; }
+    .footer-brand { font-size: 28px; }
+    .footer-bottom { font-size: 11px; }
+  }
+
+  @media (max-width: 420px) {
+    .wrap { padding: 0 16px; }
+    .topbar-inner { padding: 8px 16px; }
+    .topbar-inner > span:last-child { font-size: 11px; }
+    .nav-inner { padding: 12px 16px; }
+    .logo span:last-child { display: none; }
+
+    h1.hero-title { font-size: clamp(40px, 12vw, 56px); }
+    .hero-trust { gap: 18px; }
+    .trust-item { flex: 1 1 calc(50% - 9px); }
+
+    .hero-visual { height: 340px; }
+    .phone-card { width: 150px; height: 300px; right: 0; }
+    .ticket-1 { width: 150px; font-size: 11px; }
+    .ticket-2 { width: 160px; font-size: 11px; }
+
+    .pricing-row { padding: 16px; }
+    .pricing-service { font-size: 15px; }
+    .pricing-price { font-size: 18px; }
+  }
 
 </style>
 </head>
