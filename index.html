@@ -69,15 +69,29 @@
     padding: 10px 32px;
     max-width: 1280px; margin: 0 auto;
   }
-  .topbar .live::before {
-    content: '';
-    display: inline-block;
+  .topbar-status {
+    display: inline-flex; align-items: center; gap: 8px;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .topbar-status .live {
     width: 8px; height: 8px;
     background: #34d399;
     border-radius: 50%;
-    margin-right: 8px;
+    flex-shrink: 0;
     animation: pulse 2s infinite;
   }
+  .topbar-status-short { display: none; }
+  .topbar-contact {
+    display: inline-flex; align-items: center; gap: 10px;
+    white-space: nowrap;
+  }
+  .topbar-phone {
+    font-weight: 600;
+    transition: color 0.2s;
+  }
+  .topbar-phone::before { content: '📞 '; }
+  .topbar-sep { opacity: 0.4; }
   @keyframes pulse {
     0%, 100% { opacity: 1; transform: scale(1); }
     50% { opacity: 0.5; transform: scale(1.3); }
@@ -906,8 +920,18 @@
     body { font-size: 16px; }
 
     .wrap { padding: 0 20px; }
-    .topbar-inner { padding: 10px 20px; font-size: 11px; flex-wrap: wrap; gap: 6px 12px; }
-    .topbar .live { font-size: 11px; }
+    .topbar { font-size: 12px; }
+    .topbar-inner { padding: 9px 20px; gap: 12px; }
+    .topbar-addr { display: none; }
+    .topbar-sep { display: none; }
+    .topbar-phone::before { content: ''; }
+    .topbar-phone {
+      background: var(--signal);
+      color: var(--ink);
+      padding: 4px 10px;
+      border-radius: 999px;
+      letter-spacing: 0.04em;
+    }
 
     .nav-inner { padding: 14px 20px; }
     .logo { font-size: 17px; gap: 8px; }
@@ -976,8 +1000,10 @@
 
   @media (max-width: 420px) {
     .wrap { padding: 0 16px; }
-    .topbar-inner { padding: 8px 16px; }
-    .topbar-inner > span:last-child { font-size: 11px; }
+    .topbar { font-size: 11px; }
+    .topbar-inner { padding: 8px 14px; gap: 10px; }
+    .topbar-status-full { display: none; }
+    .topbar-status-short { display: inline; }
     .nav-inner { padding: 12px 16px; }
     .logo span:last-child { display: none; }
 
@@ -1002,8 +1028,12 @@
 <!-- TOP BAR -->
 <div class="topbar">
   <div class="topbar-inner">
-    <span class="live">OPEN NOW · COME SAY HI</span>
-    <span><a href="tel:+17187690418">📞 (718) 769-0418</a> &nbsp;·&nbsp; 3070A Coney Island Ave, Brooklyn</span>
+    <span class="topbar-status"><span class="live"></span><span class="topbar-status-full">Open now · come say hi</span><span class="topbar-status-short">Open now</span></span>
+    <span class="topbar-contact">
+      <a href="tel:+17187690418" class="topbar-phone">(718) 769-0418</a>
+      <span class="topbar-sep">·</span>
+      <span class="topbar-addr">3070A Coney Island Ave</span>
+    </span>
   </div>
 </div>
 
